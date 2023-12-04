@@ -6,7 +6,6 @@ router.post('/', async (req, res) => {
   try {
     const { first_name, last_name, email, gender, salary } = req.body;
 
-    // Log the received request body for debugging
     console.log('Received Request Body:', req.body);
 
     const newEmployee = new Emp({
@@ -17,24 +16,20 @@ router.post('/', async (req, res) => {
       salary,
     });
 
-    // Log the new employee details before saving
     console.log('New Employee:', newEmployee);
 
     await newEmployee.save();
 
-    // Log a success message after saving
     console.log('Employee Saved Successfully');
 
     res.status(201).json({ message: 'New employee created', employee: newEmployee });
   } catch (error) {
-    // Log any errors that occur during the process
     console.error('Error Creating Employee:', error);
 
     res.status(500).json({ message: 'An error occurred while creating the employee', error: error.message });
   }
 });
 
-// Get all Employees
 router.get('/', async (req, res) => {
   try {
     const employees = await Emp.find();
@@ -44,7 +39,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get Employee Details by ID
 router.get('/:eid', async (req, res) => {
   try {
     const employeeId = req.params.eid;
@@ -60,7 +54,6 @@ router.get('/:eid', async (req, res) => {
   }
 });
 
-// Update Employee Details by ID
 router.put('/:eid', async (req, res) => {
   try {
     const employeeId = req.params.eid;
@@ -77,7 +70,6 @@ router.put('/:eid', async (req, res) => {
   }
 });
 
-// Delete Employee by ID
 router.delete('/:eid', async (req, res) => {
   try {
     const employeeId = req.params.eid;
@@ -87,7 +79,7 @@ router.delete('/:eid', async (req, res) => {
       return res.status(404).json({ message: 'Employee not found' });
     }
 
-    res.status(204).send(); // 204 No Content
+    res.status(204).send(); 
   } catch (error) {
     res.status(500).json({ message: 'An error occurred while deleting employee', error: error.message });
   }

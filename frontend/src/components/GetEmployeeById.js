@@ -1,4 +1,3 @@
-// components/GetEmployeeById.js
 import React, { useState } from 'react';
 import { getEmployeeById } from '../services/api';
 
@@ -31,7 +30,11 @@ const GetEmployeeById = () => {
         <div>
           <h3>Employee Details</h3>
           <p>ID: {employeeData._id}</p>
-          {/* Display other employee details */}
+          <p>First Name: {employeeData.first_name}</p>
+          <p>Last Name: {employeeData.last_name}</p>
+          <p>Email: {employeeData.email}</p>
+          <p>Gender: {employeeData.gender}</p>
+          <p>Salary: {employeeData.salary}</p>
         </div>
       )}
     </div>

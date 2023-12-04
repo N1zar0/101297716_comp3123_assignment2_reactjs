@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './components/Login';
+import UserLogin from './components/UserLogin';
 import EmployeeList  from './components/GetEmployees';
 import CreateEmployee from './components/CreateEmployee';
 import DeleteEmployee from './components/DeleteEmployee';
@@ -10,7 +10,7 @@ import UserSignup from './components/UserSignup';
 function App() {
   return (
     <div>
-      <Login />
+      <UserLogin />
       <EmployeeList />
       <CreateEmployee />
       <DeleteEmployee />

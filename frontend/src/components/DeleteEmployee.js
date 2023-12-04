@@ -1,4 +1,3 @@
-// components/DeleteEmployee.js
 import React, { useState } from 'react';
 import { deleteEmployee } from '../services/api';
 
@@ -9,7 +8,6 @@ const DeleteEmployee = () => {
   const handleDelete = async () => {
     try {
       await deleteEmployee(employeeId);
-      // Handle successful deletion, e.g., show success message
       console.log('Employee deleted');
     } catch (error) {
       setError(error.message);

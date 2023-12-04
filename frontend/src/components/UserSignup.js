@@ -1,4 +1,3 @@
-// components/UserSignup.js
 import React, { useState } from 'react';
 import { userSignup } from '../services/api';
 
@@ -18,7 +17,6 @@ const UserSignup = () => {
     e.preventDefault();
     try {
       const newUser = await userSignup(formData);
-      // Handle successful signup, e.g., show success message
       console.log('New user signed up:', newUser);
     } catch (error) {
       setError(error.message);
@@ -37,7 +35,20 @@ const UserSignup = () => {
           value={formData.username}
           onChange={handleChange}
         />
-        {/* Other input fields for email and password */}
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
         <button type="submit">Signup</button>
       </form>
     </div>

@@ -1,4 +1,3 @@
-// components/Login.js
 import React, { useState } from 'react';
 import { login } from '../services/api';
 

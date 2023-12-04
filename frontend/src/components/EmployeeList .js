@@ -1,4 +1,3 @@
-// components/EmployeeList.js
 import React, { useState, useEffect } from 'react';
 import { getAllEmployees } from '../services/api';
 

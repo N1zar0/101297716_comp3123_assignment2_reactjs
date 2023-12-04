@@ -1,4 +1,3 @@
-// components/CreateEmployee.js
 import React, { useState } from 'react';
 import { createEmployee } from '../services/api';
 
@@ -20,7 +19,6 @@ const CreateEmployee = () => {
     e.preventDefault();
     try {
       const newEmployee = await createEmployee(formData);
-      // Handle successful creation, e.g., show success message
       console.log('New employee created:', newEmployee);
     } catch (error) {
       setError(error.message);
